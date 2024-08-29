@@ -70,46 +70,54 @@
 .theme-menu__button:hover {
   opacity: 0.6;
   transition: 0.3s ease;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 .theme-menu__button:focus {
   outline: none;
+  border: none;
   opacity: 0.6;
 }
 
 .theme-menu__button::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
+  content: '';
+  display: block;
+  width: 0%;
+  height: 3px;
   background-color: var(--main-color);
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  opacity: 0;
+  transition: 0.3s cubic-bezier(0, 0.02, 1, 1.03);
+  /* transform: scaleX(0); */
 }
 
-.theme-menu__button:hover::after,
 .theme-menu__button:focus-visible::after {
-  transform: scaleX(1);
+  /* transform: scaleX(1); */
   transform-origin: bottom left;
   opacity: 0.6;
+  width: 100%;
 }
 
 .theme-menu__button:disabled {
   opacity: 0.6;
   transition: 0.3s ease;
   pointer-events: none;
+  position: relative;
 }
 
 .theme-menu__button:disabled::before {
   content: '▶';
-  inset-inline-start: -13px;
+  position: absolute;
   opacity: 0.6;
-  transition: 0.3s ease;
+  animation: tik 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes tik {
+  from {
+    inset-inline-start: -20px;
+  }
+
+  to {
+    inset-inline-start: -16px;
+  }
 }
 
 .main {
@@ -186,11 +194,99 @@
   margin: 0 25px 25px 0;
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--main-color);
+  padding: 3px;
+  transition: 0.3s ease;
+}
+
 .button_icon {
   border: transparent;
   background-color: transparent;
-  padding: 9px 12px 6px 0;
+  padding: 9px 0 6px 0;
   color: var(--main-color);
+  margin-right: 12px;
+}
+
+.like-icon {
+  width: 39px;
+  height: 36px;
+}
+
+.like-icon:hover {
+  fill: none;
+  cursor: pointer;
+
+  &.like-icon path:nth-last-of-type(2) {
+    opacity: 1;
+    fill: var(--main-color, rgba(0, 0, 0, 1));
+    transition: opacity 0.5s linear;
+    transition-delay: 0.3s;
+  }
+  
+  &.like-icon path:nth-child(3) {
+    opacity: 1;
+    fill: var(--main-color, rgba(0, 0, 0, 1));
+    transition: opacity 1.3s linear;
+    transition-delay: 0.1s;
+  }
+}
+
+/* .heart .core {
+  fill: none;
+  transition: fill 0.3s linear; 
+}
+
+.heart .main-body {
+  fill: none;
+  transition: fill 0.3s linear 0.05s; 
+}
+
+.heart .contour {
+  fill: var(--main-color); 
+  transition: fill 0.3s linear; 
+}
+
+.button_icon:hover .heart .core {
+  fill: var(--main-color); 
+  transition: opacity 0.3s linear;
+  opacity: 1;
+  transition: fill 0.3s linear;
+}
+
+.button_icon:hover .heart .main-body {
+  fill: var(--main-color); 
+  transition-delay: 0.5s;
+} */
+
+/* .button_icon:hover .heart .core {
+  transition-delay: 0s;
+} */
+
+/* .button_icon:hover .heart .main-body {
+  fill: var(--main-color); 
+} */
+
+/* .button_icon .heart .main-body {
+  fill: none;
+  transition: fill 0.3s linear; 
+} */
+
+/* .button_icon .heart .core {
+  fill: none; 
+  transition: fill 0.3s linear 0.03s; 
+} */
+
+.button_icon:hover {
+  color: var(--main-color)
+}
+
+.sparks {
+  opacity: 0;
 }
 
 .content_button {
@@ -199,6 +295,42 @@
   font-weight: var(--main-font-weight);
   background-color: transparent;
   border: 2px solid var(--main-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.content_button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--main-color);
+  transition: 0.3s ease;
+}
+
+.content_button:focus-visible {
+  padding: 9px 31px;
+}
+
+.content_button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transition: 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.content_button:hover::before {
+  transform: translateX(0);
+}
+
+.content_button:hover::before .button__text {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  transition: color 0.5s ease-in-out;
+  mix-blend-mode: difference;
 }
 
 .footer {
@@ -210,13 +342,47 @@
   margin: 52px clamp(2.125rem, -9.2967rem + 48.7324vw, 34.5625rem) 100px;
   border: 2px solid var(--main-color);
   color: var(--main-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer_button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--main-color);
+}
+
+.footer_button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: 0;
+  transition: 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.footer_button:hover::before {
+  transform: translateX(0);
+}
+
+.footer_button:hover::before.footer_text,
+.footer_button:hover::before.footer_icon {
+  position: relative;
+  z-index: 10;
+  mix-blend-mode: difference;
+  transition: color 0.5s ease-in-out;
+  color: var(--accent-color);
 }
 
 .footer_icon {
   max-width: 28px;
   height: auto;
-  
   padding-top: 15px;
+  mix-blend-mode: difference;
+  color: var(--accent-color);
 }
 
 .footer_text {

@@ -9,6 +9,7 @@
   --bg-color-main: #d3d3d3;
   --bg-color-start: #e7e7e7;
   --bg-color-end: #1a1a1a;
+  --sparks-color: red;
   --bg-gradient: repeating-linear-gradient(to right, var(--bg-color-main), var(--bg-color-main) 2px, transparent 2px, transparent 4px), 
   repeating-linear-gradient(to bottom, var(--bg-color-main), var(--bg-color-main) 2px, transparent 2px, transparent 4px),
   linear-gradient(180deg, var(--bg-color-start) 0.01%, var(--bg-color-end) 100%);
