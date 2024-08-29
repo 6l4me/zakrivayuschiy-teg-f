@@ -15,6 +15,7 @@
   --bg-color-start: #007f0c;
   --bg-color-end: #004306;
   --shadow-color: #100D1B;
+  --color-theme: #00cc14;
 }
 
 :root.theme-light {
@@ -26,6 +27,7 @@
   --bg-color-start: #e7e7e7;
   --bg-color-end: #1a1a1a;
   --shadow-color: #878788;
+  --color-theme: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,5 +40,6 @@
     --bg-color-start: #007f0c;
     --bg-color-end: #004306;
     --shadow-color: #100D1B;
+    --color-theme: #00cc14;
   }
 }
