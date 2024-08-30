@@ -240,7 +240,7 @@
   margin: 0 25px 15px 0;
 }
 
-.card__like-button {
+.card__icon-button {
   border: transparent;
   background-color: transparent;
   padding: 9px 0 6px 0;
@@ -289,7 +289,7 @@
   transition-delay: 0.05s;
 }
 
-/* .like-icon {
+.like-icon {
   &.is-liked .contour {
     transform-origin: center;
     fill: var(--sparks-color);
@@ -343,7 +343,7 @@
   to {
     opacity: 1;
   }
-} */
+}
 
 .button__text {
   color: var(--color-theme);
@@ -359,7 +359,7 @@
   padding-bottom: clamp(0.9375rem, 0.8715rem + 0.2817vw, 1.125rem);
 }
 
-.card__icon-button {
+.card__like-button {
   background-color: var(--accent-color);
   position: relative;
   overflow: hidden;
@@ -367,13 +367,13 @@
   color: var(--main-color);
 }
 
-.card__icon-button:focus {
+.card__like-button:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--main-color);
   transition: 0.3s ease;
 }
 
-.card__icon-button::before {
+.card__like-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -385,11 +385,11 @@
   transform: translateX(-100%);
 }
 
-.card__icon-button:hover::before {
+.card__like-button:hover::before {
   transform: translateX(0);
 }
 
-.card__icon-button:hover::before .button__text {
+.card__like-button:hover::before .button__text {
   position: relative;
   z-index: 1;
   mix-blend-mode: difference;
@@ -397,17 +397,17 @@
   mix-blend-mode: difference;
 }
 
-.card .card__icon-button {
+.card .card__like-button {
   padding: 9px 31px;
   font-family: var(--accent-font);
   font-weight: var(--main-font-weight);
 }
 
-.card .card__icon-button:focus-visible {
+.card .card__like-button:focus-visible {
   padding: 9px 31px;
 }
 
-.footer .card__icon-button {
+.footer .card__like-button {
   margin: 0 clamp(2.125rem, -9.2967rem + 48.7324vw, 34.5625rem) 100px;
 }
 
@@ -458,7 +458,7 @@ dialog::backdrop {
   width: clamp(12.375rem, 11.5827rem + 3.3803vw, 14.625rem);
 }
 
-.dialog .card__icon-button {
+.dialog .card__like-button {
   height: 38px;
   margin-top: 30px;
   font-family: var(--accent-font);
@@ -472,7 +472,7 @@ dialog::backdrop {
 }
 
 @media (width > 637px) {
-  .footer .card__icon-button {
+  .footer .card__like-button {
     height: 55px;
   }
 
