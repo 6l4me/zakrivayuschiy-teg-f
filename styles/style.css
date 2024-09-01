@@ -55,7 +55,7 @@
 
 .theme-menu__list {
   display: grid;
-  gap: 12px;
+  gap: 11.5px;
   padding-left: 20px
 }
 
@@ -83,7 +83,7 @@
 
 .card_title {
   border: 2px solid var(--main-color);
-  padding: 4px 10px 6px;
+  padding: 3.5px 10px 6px;
   font-variation-settings: 'wght' var(--header-font-weight);
   font-size: 18px;
   background-color: var(--accent-color);
@@ -100,7 +100,7 @@
   content: '';
   text-transform: uppercase;
   position: absolute;
-  top: 20px;
+  top: 21.5px;
   right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
   font-family: var(--accent-font);
   color: var(--main-color);
@@ -227,14 +227,18 @@
   font-weight: var(--main-font-weight);
 }
 
+.footer {
+  margin: -1px auto 100px;
+}
+
 .footer_button {
-  margin: -5px clamp(2.125rem, -9.2967rem + 48.7324vw, 34.5625rem) 100px;
+  /* margin: -5px 0 100px; */
   background-color: var(--accent-color);
   position: relative;
   overflow: hidden;
   border: 2px solid var(--main-color);
   color: var(--main-color);
-  width: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
+  width: clamp(19.125rem, 18.5088rem + 2.6291vw, 20.875rem);
   padding: 15px 20px;
 }
 
@@ -302,9 +306,14 @@
 }
 
 @media (width < 638px) {
-  .button__text {
-    margin-top: 6px;
+  .main {
+    gap: 51px;
   }
+
+  .button__text {
+    margin-top: 7.5px;
+  }
+
 }
 
 @media (width > 637px) {
@@ -316,12 +325,21 @@
     padding-top: 25px;
   }
 
+  .footer {
+    margin: -5px auto 100px;
+  }
+
   .footer .card__like-button {
     height: 55px;
   }
 
   .footer_icon {
     width: 21px;
+  }
+
+  .footer_button {
+    max-width: 335px;
+    width: 100%;
   }
 
   /* .footer .button__text {
