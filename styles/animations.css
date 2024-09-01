@@ -195,7 +195,6 @@
   z-index: 1;
   mix-blend-mode: difference;
   transition: color 0.5s ease-in-out;
-  mix-blend-mode: difference;
 }
 
 .footer_button::before {

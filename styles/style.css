@@ -52,6 +52,10 @@
   outline: none;
 }
 
+.title:focus-visible {
+  outline: none;
+}
+
 .header_text {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   padding-bottom: 25px;
@@ -59,7 +63,7 @@
 
 .theme-menu__list {
   display: grid;
-  gap: 13px;
+  gap: 12px;
   padding-left: 20px
 }
 
@@ -76,7 +80,7 @@
 
 .main {
   display: grid;
-  gap: 50px;
+  gap: 52px;
 }
 
 .card {
@@ -178,7 +182,7 @@
 }
 
 .content_block_text {
-  padding: 26px;
+  padding: 20px 26px 16px;
   padding-bottom: 18px;
   display: grid;
   gap: 27px;
@@ -190,7 +194,7 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  margin: 0 25px 15px 0;
+  margin: -6px 25px 15px 0;
 }
 
 .card__icon-button {
@@ -198,7 +202,8 @@
   background-color: transparent;
   padding: 10px 0 6px 2px;
   color: var(--main-color);
-  margin-right: 12px;
+  margin-right: 7px;
+  margin-top: 8px;
 }
 
 .like-icon {
@@ -217,8 +222,12 @@
 }
 
 .footer .button__text {
-  padding-bottom: clamp(0.9375rem, 0.8715rem + 0.2817vw, 1.125rem);
+  width: 266px;
 }
+
+/* .footer .button__text {
+  padding-bottom: clamp(0.9375rem, 0.8715rem + 0.2817vw, 1.125rem);
+} */
 
 .card__like-button {
   background-color: var(--accent-color);
@@ -239,19 +248,19 @@
 }
 
 .footer_button {
-  margin: 0 clamp(2.125rem, -9.2967rem + 48.7324vw, 34.5625rem) 100px;
+  margin: -5px clamp(2.125rem, -9.2967rem + 48.7324vw, 34.5625rem) 100px;
   background-color: var(--accent-color);
   position: relative;
   overflow: hidden;
   border: 2px solid var(--main-color);
   color: var(--main-color);
   width: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
+  padding: 15px 20px;
 }
 
 .footer_icon {
   max-width: 28px;
   height: auto;
-  padding-top: 15px;
   mix-blend-mode: difference;
   color: var(--color-theme);
 }
@@ -313,6 +322,12 @@ dialog::backdrop {
   color: var(--main-color);
 }
 
+@media (width < 638px) {
+  .button__text {
+    margin-top: 6px;
+  }
+}
+
 @media (width > 637px) {
   .footer .card__like-button {
     height: 55px;
@@ -322,7 +337,7 @@ dialog::backdrop {
     width: 21px;
   }
 
-  .footer .button__text {
+  /* .footer .button__text {
     padding-bottom: 19px;
-  }
+  } */
 }
