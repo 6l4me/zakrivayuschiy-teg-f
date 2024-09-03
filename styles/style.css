@@ -234,7 +234,7 @@
 .footer_button {
   /* margin: -5px 0 100px; */
   width: clamp(19.125rem, 18.5088rem + 2.6291vw, 20.875rem);
-  padding: 15px 20px;
+  padding: 15px 19px;
 }
 
 .footer_icon {
